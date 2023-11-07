@@ -1,0 +1,40 @@
+.body{
+        padding-left: 3rem;
+        padding-right: 3rem;
+        padding-top: 2rem;
+}
+
+.card{
+    border: 0;
+    padding: 1rem;
+}
+
+.card-percent-text{
+ color: #506DE2;   
+}
+
+.card-percent-text:hover{
+    color: #fff;   
+   }
+
+.card:hover{
+    background-color: #506DE2;
+    color : #fff;
+
+    .card-percent-text{
+        color: #fff;   
+       }
+}
+
+small{
+    color: #c8c7c7;
+}
+
+i{
+    font-size: 2rem;
+    color: #d9d8d8;
+}
+
+.order-card, .new-user{
+    background-color: #fff;
+}

@@ -1,0 +1,58 @@
+
+<div class="container">
+  <table mat-table [dataSource]="dataSource" class="table-responsive">
+
+      
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <!-- Product Column -->
+    <ng-container matColumnDef="product">
+      <th mat-header-cell *matHeaderCellDef> Product </th>
+      <td mat-cell *matCellDef="let element"> {{element.product}} </td>
+    </ng-container>
+  
+    <!-- Delivery date Column -->
+    <ng-container matColumnDef="delivery_date">
+      <th mat-header-cell *matHeaderCellDef> Delivery date </th>
+      <td mat-cell *matCellDef="let element"> {{element.delivery_date}} </td>
+    </ng-container>
+
+    <!-- Status Column -->
+    <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element">
+            <p *ngIf="element.status === 'Paid'" class="p-0 m-0">
+                <a type="button" class="paid-btn"> {{element.status}}</a> 
+            </p>
+            <p *ngIf="element.status == 'Pending'" class="p-0 m-0">
+                <a type="button" class="pending-btn"> {{element.status}}</a> 
+            </p>
+            <p *ngIf="element.status == 'Failed'" class="p-0 m-0">
+                <a type="button" class="failed-btn"> {{element.status}}</a> 
+            </p>
+        </td>
+      </ng-container>
+    <!-- tracking_no Column -->
+    <ng-container matColumnDef="tracking_no">
+        <th mat-header-cell *matHeaderCellDef> Tracking no </th>
+        <td mat-cell *matCellDef="let element"> {{element.tracking_no}} </td>
+    </ng-container>
+
+    <!-- shipping Column -->
+    <ng-container matColumnDef="shipping">
+        <th mat-header-cell *matHeaderCellDef> Shipping </th>
+        <td mat-cell *matCellDef="let element"> {{element.shipping}} </td>
+      </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+
+  
+  

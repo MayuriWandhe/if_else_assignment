@@ -1,0 +1,23 @@
+   <div class="container bg-white">
+    <div *ngFor="let list of userList">
+      <div class="row border-bottom py-2">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-2">
+          <a type="button" (click)="openDialog(list.id)">
+            <img src="{{list.picture}}" alt="profile.png" class="rounded-pill" width="50">
+          </a>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+          <p class="p-0 m-0">{{list.name}}</p>
+          <small>{{ list.country }}</small>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+          <p class="d-flex mt-3"> 
+            <progress id="file" value="{{list.progress}}" max="100"></progress>{{list.progress}}%
+        </p>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-2">
+          <button mat-button class="more-button">More</button>
+        </div>
+      </div>
+    </div>
+   </div>
